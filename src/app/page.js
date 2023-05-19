@@ -21,7 +21,14 @@ export default function Home() {
       '--foreground-primary': clicked ? 'black' : 'white',
       '--foreground-secondary': clicked ? 'gray': 'lightgray',
 
-      '--scheme-switch-left': clicked ? '68px': '4px',
+      '--switch-background-primary': clicked ? '#010048' : '#3EB7FC',
+      '--switch-left': clicked ? '68px': '2px',
+      '--switch-sun-transform': clicked ? 'translateX(40px)' : 'translateX(0px)',
+      '--switch-sun-wrapper-transition': clicked ? '0.7s cubic-bezier(.32,0,1,1)' : '0.7s cubic-bezier(0,1,0.5,1)',
+      '--switch-sun-wrapper-transform': clicked ? 'translateY(40px)' : 'translateY(0px)',
+      '--switch-moon-transform': clicked ? 'translateX(0px)' : 'translateX(-40px)',
+      '--switch-moon-wrapper-transition': clicked ? '0.7s cubic-bezier(0,1,0.5,1)' : '0.7s cubic-bezier(.32,0,1,1)',
+      '--switch-moon-wrapper-transform': clicked ? 'translateY(0px)' : 'translateY(40px)',
     }}>
       <SchemeSwitch toggleClicked={toggleClicked}/>
       <div className={styles.description}>
