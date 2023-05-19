@@ -1,4 +1,7 @@
+
+
 .main {
+  background: var(--foreground-primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

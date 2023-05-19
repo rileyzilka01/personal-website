@@ -1,9 +1,29 @@
+"use client";
+
 import Image from 'next/image'
-import styles from './page.module.css'
+
+import SchemeSwitch from '@/components/schemeSwitch'
+
+import styles from '../styles/page.module.css'
+
+import React, { useState } from 'react'
 
 export default function Home() {
+
+  const [clicked, setClicked] = useState(false);
+
+  const toggleClicked = () => {
+    setClicked(!clicked);
+  }
+
   return (
-    <main className={styles.main}>
+    <main className={styles.main} style={{
+      '--foreground-primary': clicked ? 'black' : 'white',
+      '--foreground-secondary': clicked ? 'gray': 'lightgray',
+
+      '--scheme-switch-left': clicked ? '68px': '4px',
+    }}>
+      <SchemeSwitch toggleClicked={toggleClicked}/>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
